@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SisAluno</title>
+<meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+<link rel="stylesheet" href="resources/bootstrap.css">
+<link rel="stylesheet" href="resources/estilo.css">
+<!-- Bootstrap core CSS -->
+<link href="resources/MDB-Free/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="SisAluno" ng-controller="SisAlunoCtrl">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="title navbar-brand text-center" href="#"><h1>SisAluno</h1></a>
+			</div>
+			<!-- 			<ul class="nav navbar-nav"> -->
+			<!-- 				<li class="active"><a href="#">Home</a></li> -->
+
+
+			
+		</div>
+	</nav>
+
+	<!-- Primeira Tela -->
+	<div class="jumbotron" data-ng-show="controller.chamado">
+		<div class="div-list">
+			<h3>Adiconar Aluno</h3>
+
+			<input class="form-control" type="text" ng-model="aluno.nome"
+				placeholder="Nome" required>
+			</hr>
+			<input class="form-control" type="text" ng-model="aluno.curso"
+				placeholder="Curso">
+			</hr>
+			<input class="form-control" type="text" ng-model="aluno.curso"
+				placeholder="Matrícula"> <input class="form-control"
+				type="text" ng-model="aluno.curso" placeholder="Semestre">
+			</hr>
+			<input class="form-control" type="text" ng-model="aluno.curso"
+				placeholder="Status"> <br />
+			<button type="button" data-ng-click="controler.confirmar(aluno)"
+				class=" btn btn-success">Salvar</button>
+			<button type="button" data-ng-click="controler.cancelar(aluno)"
+				class="btn btn-danger">Cancelar</button>
+						
+		</div>
+	</div>
+	
+	<!-- Segunda Tela -->
+	<div class="jumbotron" data-ng-show="!controller.chamado">
+		<div class="div-list">
+			<h3>Cadastro de Aluno</h3>
+			<table class="table table-striped">
+				<tr>
+					<th>Nome</th>
+					<th>Curso</th>
+					<th>Semestre</th>
+					<th>Matricula</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+				<tr ng-repeat="aluno in alunos">
+					<td>{{aluno.nome | uppercase}}</td>
+					<td>{{aluno.curso}}</td>
+					<td>{{aluno.semestre}}</td>
+					<td>{{aluno.matricula}}</td>
+					<td>{{aluno.status}}</td>
+					<td><a href="" class="fa fa-facebook"></a>
+						<button type="button" data-ng-click="controler.adicionar(aluno)"
+							class=" btn btn-success">Adicionar</button>
+						<button type="button" data-ng-click="controler.editar(aluno)"
+							class="btn btn-primary">Editar</button>
+						<button type="button" data-ng-click="controler.deletar(aluno)"
+							class="btn btn-danger">Excluir</button></td>
+
+
+				</tr>
+			</table>
+			<hr />
+			<!-- 			<input class="form-control" type="text" ng-model="aluno.nome" placeholder="Nome"></hr>	 -->
+			<!-- 			<input class="form-control" type="text" ng-model="aluno.curso" placeholder="Curso">	 -->
+			<!-- 			<select class="form-control" ng-model="aluno.semestre" ng-options="semestre.nome for semestre in semestres"> -->
+			<!-- 				<option value="">Selecione uma semestre</option>			 -->
+			<!-- 			</select> -->
+
+		</div>
+	</div>
+	<!-- 	<div class="buttoncamp"> -->
+	<!-- 		<button type="button" data-ng-click="controler.adicionar(aluno)" -->
+	<!-- 			class=" btn btn-success">Adicionar</button> -->
+	<!-- 		<button type="button" data-ng-click="controler.editar(aluno)" -->
+	<!-- 			class="btn btn-primary">Editar</button> -->
+	<!-- 		<button type="button" data-ng-click="controler.deletar(aluno)" -->
+	<!-- 			class="btn btn-danger">Excluir</button> -->
+	<!-- 	</div> -->
+	<script src="resources/angular.js"></script>
+	<script src="resources/sisAluno.js"></script>
+</body>
+</html>

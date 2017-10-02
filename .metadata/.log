@@ -1,0 +1,32 @@
+!SESSION 2017-10-02 11:50:49.317 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.tools.project.examples 4 0 2017-10-02 11:54:21.604
+!MESSAGE java.lang.IllegalArgumentException: Negative time
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.IllegalArgumentException: Negative time
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil.getCategories(ProjectExampleUtil.java:302)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil.getCategories(ProjectExampleUtil.java:263)
+	at org.jboss.tools.project.examples.internal.ProjectExampleXmlProvider.getExamples(ProjectExampleXmlProvider.java:28)
+	at org.jboss.tools.project.examples.internal.ProjectExampleManager.getExamples(ProjectExampleManager.java:60)
+	at org.jboss.tools.central.editors.GettingStartedHtmlPage$RefreshQuickstartsJob.run(GettingStartedHtmlPage.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.lang.IllegalArgumentException: Negative time
+	at java.io.File.setLastModified(File.java:1427)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil.downloadExamplesFile(ProjectExampleUtil.java:511)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil.getProjectExamplesFile(ProjectExampleUtil.java:455)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil$FetchProjectExampleDocumentTask.call(ProjectExampleUtil.java:619)
+	at org.jboss.tools.project.examples.model.ProjectExampleUtil$FetchProjectExampleDocumentTask.call(ProjectExampleUtil.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
